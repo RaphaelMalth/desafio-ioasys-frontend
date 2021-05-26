@@ -10,12 +10,11 @@ import { BookModalComponent } from 'src/app/components/book-modal/book-modal.com
 import { Book } from 'src/app/models/book.model';
 
 @Component({
-  selector: 'app-secure',
-  templateUrl: './secure.component.html',
-  styleUrls: ['./secure.component.scss'],
+  selector: 'app-landing',
+  templateUrl: './landing.component.html',
+  styleUrls: ['./landing.component.scss'],
 })
-export class SecureComponent implements OnInit {
-  message = '';
+export class LandingComponent implements OnInit {
   isLoadingResults = false;
   user: User;
 
@@ -41,15 +40,11 @@ export class SecureComponent implements OnInit {
   }
 
   openModal(book: Book) {
-    console.log(book);
     const modalRef = this.modal.open(BookModalComponent, {
       data: book,
       panelClass: 'my-dialog',
     });
 
-    modalRef.afterClosed().subscribe(result => {
-      console.log(`Modal result: ${result}`);
-    });
   }
 
   listBooks(pagination: Pagination) {
@@ -57,7 +52,6 @@ export class SecureComponent implements OnInit {
       .getBooks(pagination.page, pagination.amount, pagination.category)
       .subscribe(
         (res) => {
-          console.log('res----', res);
           this.books = res;
         },
         (err) => {

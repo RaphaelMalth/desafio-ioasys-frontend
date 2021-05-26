@@ -9,18 +9,27 @@ import { AuthService } from './auth.service';
 import { TokenService } from './token.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BooksService {
-
   constructor(private http: HttpClient) {}
 
-  getBooks(page: string, amount = '10', category: string): Observable<BooksDTO> {
+  getBooks(
+    page: string,
+    amount = '10',
+    category: string
+  ): Observable<BooksDTO> {
     return this.http
-      .get<BooksDTO>(environment.API_URL + `books?page=${page}&amount=${amount}&category=${category}`)
+      .get<BooksDTO>(
+        environment.API_URL +
+          `books?page=${page}&amount=${amount}&category=${category}`
+      )
       .pipe(catchError(BooksService.handleError)) as Observable<BooksDTO>;
   }
 
+  /*
+  Parece que esse serviço foi disponibilizado para carregar as informações no livro no modal correto? Não utilizei pq ele trás as mesmas informações que o serviço de listagem já trás. Não vi a necessidade de fazer mais uma chamada.
+  */
   getBookById(book: Book): Observable<Book> {
     return this.http
       .get<Book>(environment.API_URL + `books/${book.id}`)

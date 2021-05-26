@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { TokenService } from './token.service';
 
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 import { User } from '../models/user.model';
@@ -44,8 +44,7 @@ export class AuthService {
       .post<any>(environment.API_URL + 'auth/sign-in', body, HTTP_OPTIONS)
       .pipe(
         tap((res: HttpResponse<any>) => {
-          // this.tokenService.saveToken(res.headers.get('authorization'));
-          // this.tokenService.saveRefreshToken(res.headers.get('refresh-token'));
+          localStorage.setItem('user', JSON.stringify(res));
         }),
         catchError(AuthService.handleError)
       );

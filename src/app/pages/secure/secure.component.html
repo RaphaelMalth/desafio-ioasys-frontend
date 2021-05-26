@@ -1,0 +1,48 @@
+<!-- <div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
+  <mat-card class="example-card">
+    <h4>{{ message }}</h4>
+    <div class="button-row">
+      <a mat-flat-button color="primary" (click)="logout()"
+        ><mat-icon>logout</mat-icon>Logout</a
+      >
+    </div>asdas
+  </mat-card>
+</div> -->
+<div class="container">
+  <mat-toolbar fxLayout="row" fxLayoutAlign="start center">
+    <img src="assets/images/logo-2.png" alt="ioasys-logo" />
+    <span class="subtitle">Books</span>
+    <span fxFlex></span>
+    <span class="user">Bem vindo, {{ user.name }} !</span>
+    <a mat-button (click)="logout()"><mat-icon>logout</mat-icon></a>
+  </mat-toolbar>
+
+  <div
+    fxLayout="row wrap"
+    fxLayoutAlign="start center"
+    style="margin-top: 40px"
+  >
+    <div
+      fxFlex="100"
+      fxFlex.gt-sm="25"
+      fxLayoutAlign="center center"
+      *ngFor="let book of books?.data"
+    >
+      <app-book-card
+        [book]="book"
+        (cardClickEvent)="openModal($event)"
+      ></app-book-card>
+    </div>
+    <div fxFlex="100" fxFlex.gt-sm="100" fxLayoutAlign="end center">
+      <mat-paginator
+        [length]="books?.totalItems"
+        [pageSize]="pagination.amount"
+        (page)="onPageChange($event)"
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>

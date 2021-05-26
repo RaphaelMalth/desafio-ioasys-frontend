@@ -1,0 +1,42 @@
+.card {
+  cursor: pointer;
+  padding: 20px 20px 0 20px;
+  margin: 10px;
+  background: #ffffff;
+  box-shadow: 0px 6px 24px rgba(84, 16, 95, 0.13);
+  border-radius: 4px;
+  min-width: 272px;
+  min-height: 160px;
+
+  img {
+    width: 81px;
+    height: 122px;
+    // margin: 19px 0px 19px 12px;
+    filter: drop-shadow(0px 6px 9px rgba(0, 0, 0, 0.15));
+  }
+
+  .title {
+    font-family: Heebo;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    margin: 0 0 0 0;
+  }
+
+  .authors {
+    font-family: Heebo;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ab2680;
+    margin: 0 0 0 0;
+  }
+
+  .info {
+    font-family: Heebo;
+    font-size: 12px;
+    line-height: 20px;
+    color: #999999;
+    margin: 0 0 0 0;
+  }
+}

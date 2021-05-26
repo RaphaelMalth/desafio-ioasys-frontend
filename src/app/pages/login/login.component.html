@@ -1,0 +1,42 @@
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+    <img src="assets/images/logo.png" alt="ioasys-logo" /><span class="subtitle"
+      >Books</span
+    >
+
+    <mat-form-field class="email-input">
+      <label>
+        <input matInput placeholder="E-mail" formControlName="email" />
+      </label>
+    </mat-form-field>
+    <mat-form-field class="password-input">
+      <label>
+        <input
+          type="password"
+          matInput
+          placeholder="Password"
+          formControlName="password"
+        />
+      </label>
+    </mat-form-field>
+    <button
+      type="submit"
+      [disabled]="!loginForm.valid"
+      mat-flat-button
+      color="primary"
+      class="submit-btn"
+    >
+      <span *ngIf="!isLoadingResults">Entrar</span>
+      <mat-spinner
+        *ngIf="isLoadingResults"
+        diameter="20"
+        color="accent"
+      ></mat-spinner>
+    </button>
+
+    <div class="error" *ngIf="hasError">
+      <span>Email e/ou senha incorretos.</span>
+      <img class="arrow" src="assets/images/arrow.png" alt="ioasys-logo" />
+    </div>
+  </form>
+</div>

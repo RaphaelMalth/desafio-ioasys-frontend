@@ -1,0 +1,99 @@
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../../../assets/images/bg.jpg");
+  min-height: 980px;
+  width: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-left: 115px;
+
+  .logo {
+    position: absolute;
+    left: 8.42%;
+    right: 83.94%;
+    top: 35.68%;
+    bottom: 59.64%;
+    color: #ffffff;
+  }
+
+  .subtitle {
+    position: absolute;
+    width: 77px;
+    height: 40px;
+    font-family: Heebo;
+    font-weight: 100;
+    font-size: 28px;
+    line-height: 40px;
+    margin-left: 16.6px;
+    color: #ffffff;
+  }
+
+  .input {
+    position: absolute;
+    width: 368px;
+    height: 60px;
+    left: 115px;
+    background: rgba(0, 0, 0, 0.32);
+    backdrop-filter: blur(2px);
+    border-radius: 4px;
+  }
+
+  .email-input {
+    @extend .input;
+    top: 519px;
+  }
+  .password-input {
+    @extend .input;
+    top: 598px;
+  }
+  mat-spinner {
+    margin-left: 16px;
+    color: #b22e6f;
+  }
+
+  .submit-btn {
+    position: absolute;
+    width: 85px;
+    height: 36px;
+    left: 386px;
+    top: 609px;
+
+    background: #ffffff;
+    border-radius: 44px;
+    color: #b22e6f;
+  }
+
+  .error {
+    position: absolute;
+    width: 239px;
+    height: 48px;
+    left: 115px;
+    top: 675px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(2px);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+
+    span {
+      font-family: Heebo;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 16px;
+      padding: 16px;
+      color: #ffffff;
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    left: 17px;
+    top: -8px;
+    backdrop-filter: blur(2px);
+  }
+}

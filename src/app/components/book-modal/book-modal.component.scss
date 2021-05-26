@@ -1,0 +1,76 @@
+.close-dialog {
+  position: relative;
+  .btn-fechar {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+  }
+}
+
+.btn-dialog {
+  padding: 10px;
+  float: right;
+}
+
+.container {
+  max-width: 769px;
+  min-height: 500px;
+
+  .title {
+    font-family: Heebo;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 40px;
+    color: #333333;
+    margin: 0 0 0 0;
+  }
+
+  .authors {
+    font-family: Heebo;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ab2680;
+  }
+
+  .info {
+    margin-top: 32px;
+
+    .info-title {
+      font-family: Heebo;
+      font-weight: 600;
+      font-size: 12px;
+
+      color: #333333;
+      float: left;
+    }
+
+    .info-value {
+      font-family: Heebo;
+      font-size: 12px;
+      color: #999999;
+      float: right;
+    }
+  }
+
+  .resenha {
+    blockquote {
+      font-family: Georgia, serif;
+      font-size: 12px;
+      position: relative;
+      margin: 0.5em;
+      padding: 0.5em 2em 0.5em 3em;
+    }
+    blockquote:before {
+      font-family: Georgia, serif;
+      position: absolute;
+      font-size: 6em;
+      line-height: 1;
+      top: 0;
+      left: 0;
+      content: "\201C";
+    }
+  }
+}

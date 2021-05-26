@@ -1,1 +1,96 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-form-field-underline {
+  display: none;
+}
+.mat-input-focused {
+  padding-left: 16px;
+  padding-top: 8px;
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
+  color: #ffffff;
+  opacity: 0.5;
+}
+.mat-form-field.mat-focused {
+  .mat-form-field-label {
+    @extend .mat-input-focused;
+  }
+  .mat-form-field-ripple {
+    @extend .mat-input-focused;
+  }
+  .mat-form-field-required-marker {
+    @extend .mat-input-focused;
+  }
+  .mat-input-element {
+    @extend .mat-input-focused;
+    line-height: 24px;
+    color: #ffffff;
+    opacity: 1;
+  }
+}
+
+.mat-input-standard {
+  padding-left: 16px;
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
+  color: #ffffff;
+  opacity: 0.5;
+}
+.mat-form-field {
+  .mat-input-element {
+    @extend .mat-input-standard;
+    line-height: 24px;
+    color: #ffffff;
+    opacity: 1;
+  }
+  .mat-form-field-label {
+    @extend .mat-input-standard;
+  }
+  .mat-form-field-ripple {
+    @extend .mat-input-standard;
+  }
+  .mat-form-field-required-marker {
+    @extend .mat-input-standard;
+  }
+}
+
+.mat-paginator-page-size {
+  display: none !important;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ab2680;
+  border-radius: 30px;
+}
+
+.cdk-global-overlay-wrapper {
+  position: relative !important;
+}
+.close.mat-button {
+  position: absolute;
+  top: 16px;
+  right: 17px;
+  padding: 5px;
+  line-height: 14px;
+  min-width: auto;
+  background-color: white;
+  border-radius: 40px;
+}

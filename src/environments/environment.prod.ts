@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  OAUTH_CLIENT: 'express-client',
+  OAUTH_SECRET: 'express-secret',
+  API_URL: 'https://books.ioasys.com.br/api/v1/',
 };

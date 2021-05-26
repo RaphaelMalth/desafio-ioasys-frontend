@@ -1,0 +1,25 @@
+<mat-card class="card" (click)="openModal(book)">
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutGap="10">
+      <div fxFlex="40%">
+        <img [src]="book.imageUrl" [alt]="book.title" />
+      </div>
+      <div fxFlex="60%" style="position: relative">
+        <h5 class="title">{{ book.title }}</h5>
+        <h5 class="authors" *ngFor="let author of book.authors">
+          {{ author }}
+        </h5>
+
+        <div class="info">
+          <span>{{ book.pageCount }}</span
+          ><br />
+          <span>{{ book.publisher }}</span
+          ><br />
+          <span>Publicado em {{ book.published }}</span
+          ><br />
+        </div>
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>

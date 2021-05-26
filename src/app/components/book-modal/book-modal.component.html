@@ -1,0 +1,50 @@
+<button class="close" mat-button (click)="onNoClick()">
+  <mat-icon>close</mat-icon>
+</button>
+<div class="container" style="padding: 5px">
+  <div mat-dialog-content>
+    <div fxLayout="row" fxLayoutGap="10">
+      <div fxFlex="50%">
+        <img [src]="data.imageUrl" [alt]="data.title" />
+      </div>
+      <div fxFlex="50%">
+        <h5 class="title">{{ data.title }}</h5>
+        <span
+          class="authors"
+          *ngFor="let author of data.authors; let last = last"
+        >
+          {{ author + (last ? "" : ",") }}
+        </span>
+
+        <div class="info">
+          <h5>INFORMAÇÕES</h5>
+          <span class="info-title"> Páginas</span>
+          <span class="info-value">{{ data.pageCount }}</span> <br />
+          <span class="info-title"> Editora</span>
+          <span class="info-value">{{ data.publisher }}</span
+          ><br />
+          <span class="info-title"> Publicação</span>
+          <span class="info-value">{{ data.published }}</span
+          ><br />
+          <span class="info-title"> Idioma</span>
+          <span class="info-value">{{ data.language }}</span
+          ><br />
+          <span class="info-title"> Título Original</span>
+          <span class="info-value">{{ data.title }}</span
+          ><br />
+          <span class="info-title"> ISBN-1</span>
+          <span class="info-value">{{ data.isbn10 }}</span
+          ><br />
+          <span class="info-title"> ISBN-13</span>
+          <span class="info-value">{{ data.isbn13 }}</span
+          ><br />
+        </div>
+
+        <div class="resenha">
+          <h5>RESENHA DA EDITORA</h5>
+          <blockquote>{{ data.description }}</blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
